@@ -1,11 +1,19 @@
 // Task 1
 // Создайте функцию getRandomInt, которая выводит в блок .out-1 случайное целое число от 117 до 132. Все переменные должны быть внутри функции. Запустите эту функцию.
 
+
+
 const out1 = document.querySelector('.out-1');
 
 // функцию пишите здесь
+function getRandomInt() {
+    let num1 = 117;
+    let num2 = 132;
+    let randomNum = Math.floor(num1 + Math.random() * (num2 + 1 - num1));
+    document.querySelector('.out-1').textContent = randomNum;
+}
 
-
+getRandomInt();
 // Task 2.
 
 // Чуть усложним. Сейчас первая задача жестко завязана на значения 117 и 132. Напишите функцию getRandomInt2, которая на основе min, max генерирует случайное целое число в этом диапазоне и выводит в out-2. Запустите эту функцию. 
@@ -15,7 +23,12 @@ let min = 888;
 let max = 900;
 
 // функцию пишите здесь
-
+function getRandomInt2() {
+    let randomNum = Math.floor(min + Math.random() * (max + 1 - min));
+    out2.textContent = randomNum;
+    return randomNum;
+}
+getRandomInt2();
 
 // Task 3.
 // Не забываем, что функции можно вызывать внутри другой функции. Напишите функцию t3, которая срабатывает при клике по кнопке .b-3, и запускает фукнции hello, и f2021. Если все сделано верно, то внутри .out-3 вы увидите текст hello 2021.
@@ -33,6 +46,8 @@ function f2021() {
 
 function t3() {
     // тут вызываете hello и f2021
+    hello();
+    f2021();
 }
 
 document.querySelector('.b-3').addEventListener('click', t3);
@@ -57,8 +72,11 @@ function t4() {
 }
 
 // тут ваша функция t4_1
+function t4_1() {
+    t4();
+}
 
-// document.querySelector('.b-4').addEventListener('click', t4_1);
+document.querySelector('.b-4').addEventListener('click', t4_1);
 
 
 
@@ -76,6 +94,8 @@ function even() {
 }
 
 function t5() {
+    let inputValue = document.querySelector('input.i-5').value;
+    return inputValue % 2 === 0 ? even() : odd();
 
 }
 
@@ -94,9 +114,10 @@ function t6() {
     function even() {
         out6.textContent = 'even';
     }
-     min = 10000;
-     max = 10099;
+    min = 10000;
+    max = 10099;
     // тут запускаете getRandomInt2
+    getRandomInt2() % 2 === 0 ? even() : odd();
 
 }
 
@@ -111,6 +132,10 @@ const out7 = document.querySelector('.out-7');
 let z7 = 91;
 
 function t7() {
+    if (z7 !== 100) {
+        z7++;
+    }
+    document.querySelector('.out-7').textContent = z7;
 
 }
 
@@ -130,7 +155,12 @@ function showNumber() {
 }
 
 function t8() {
-
+    if (z8 === 9) {
+        z8 = 0;
+    } else {
+        z8++;
+    }
+    showNumber();
 }
 
 document.querySelector('.b-8').addEventListener('click', t8);
@@ -144,6 +174,12 @@ let z9 = 3;
 const s9 = document.querySelector('.s-9');
 
 function t9() {
+    if (z9 === 5) {
+        z9 = 1;
+    } else {
+        z9++;
+    }
+    document.querySelector('.s-9').value = z9;
 
 }
 
@@ -164,6 +200,8 @@ function showArr() {
 
 function t10() {
     ar10_res = []; // очищаем
+    ar10_res = ar10.filter(item => typeof item === 'number')
+    showArr();
 
 }
 
