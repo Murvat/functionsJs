@@ -78,23 +78,23 @@ function fixUserName(str) {
 
 // ад callback
 
-// function pageLoader() {
-//     fetch('https://jsonplaceholder.typicode.com/todos/1')
-//         .then(response => response.json())
-//         .then(json => {
-//             console.log('Послали запрос на страницу')
-//             console.log('Ответ сервера: ')
-//             console.log(json);
-//             fetch('https://jsonplaceholder.typicode.com/users/' + json.userId)
-//                 .then(response => response.json())
-//                 .then(json => {
-//                 console.log('Послали запрос на страницу')
-//                 console.log('Ответ сервера: ')
-//                 console.log(json)
-//             });
-//         });
-// }
-// pageLoader();
+function pageLoader() {
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json())
+        .then(json => {
+            console.log('Послали запрос на страницу')
+            console.log('Ответ сервера: ')
+            console.log(json);
+            fetch('https://jsonplaceholder.typicode.com/users/' + json.userId)
+                .then(response => response.json())
+                .then(json => {
+                    console.log('Послали запрос на страницу')
+                    console.log('Ответ сервера: ')
+                    console.log(json)
+                });
+        });
+}
+pageLoader();
 
 function pageLoader(url, callback) {
     fetch(url)
