@@ -275,19 +275,30 @@ let ar10 = {
     }
 }
 
+
 let ar10_res = [];
 
 function t10(k, obj) {
-    for (let item in obj) {
-        if (obj[item] === obj.parent && obj[item].age === undefined) {
+    // for (let item in obj) {
+    //     if (obj[item] === obj.parent && obj[item].age === undefined) {
+    //         ar10_res.push(k);
+    //     }
+    //     if (typeof obj[item] === 'object') {
+    //         t10(k, obj[item]);
+    //     }
+    // }
+    // console.log(k, obj)
+    for (let key in obj) {
+        if (obj[key].age === undefined) {
             ar10_res.push(k);
+        } else {
+            t10(key, obj[key])
         }
-        if (typeof obj[item] === 'object') {
-            t10(k, obj[item]);
-        }
+
     }
-    console.log(ar10_res)
 }
+
+
 document.querySelector('.b-10').addEventListener('click', () => {
     for (let key in ar10) {
         t10(key, ar10[key]);
