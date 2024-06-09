@@ -288,15 +288,22 @@ function t10(k, obj) {
     //     }
     // }
     // console.log(k, obj)
-    for (let key in obj) {
-        if (obj[key].age === undefined) {
-            ar10_res.push(k);
-        } else {
-            t10(key, obj[key])
-        }
 
+
+    // Check if the object itself does not have an age property
+    if (obj.age === undefined) {
+        ar10_res.push(k);
+    };
+
+    // Iterate over all keys in the object's parent property
+    if (obj.parent) {
+        for (let key in obj.parent) {
+            t10(key, obj.parent[key]);
+        }
     }
+
 }
+
 
 
 document.querySelector('.b-10').addEventListener('click', () => {
