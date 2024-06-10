@@ -63,8 +63,12 @@ function t3(elem) {
     function r3(element) {
         let res = [...element.children];
         for (let i = 0; i < res.length; i++) {
-            out = res.filter((item) => item.tagName !== 'B' && item.tagName !== 'I' && item.tagName !== 'SPAN' && item.tagName !== 'P').map(item => item.textContent);
-            r3(res[i])
+            if (i >= 0) {
+                res.pop(res[i].tagName);
+                r3(res[i])
+            };
+            ;
+            console.log(element)
 
         };
 
