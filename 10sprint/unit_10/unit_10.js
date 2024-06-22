@@ -279,15 +279,6 @@ let ar10 = {
 let ar10_res = [];
 
 function t10(k, obj) {
-    // for (let item in obj) {
-    //     if (obj[item] === obj.parent && obj[item].age === undefined) {
-    //         ar10_res.push(k);
-    //     }
-    //     if (typeof obj[item] === 'object') {
-    //         t10(k, obj[item]);
-    //     }
-    // }
-    // console.log(k, obj)
 
 
     // Check if the object itself does not have an age property
