@@ -281,7 +281,6 @@ let ar10_res = [];
 function t10(k, obj) {
 
 
-    // Check if the object itself does not have an age property
     if (obj.age === undefined) {
         ar10_res.push(k);
     };
