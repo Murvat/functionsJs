@@ -285,7 +285,6 @@ function t10(k, obj) {
         ar10_res.push(k);
     };
 
-    // Iterate over all keys in the object's parent property
     if (obj.parent) {
         for (let key in obj.parent) {
             t10(key, obj.parent[key]);
