@@ -21,7 +21,6 @@ function f2() {
     console.log('function f2');
 }
 
-// f2();
 
 const f3 = function (a) {
     console.log('function f3 ' + a);
