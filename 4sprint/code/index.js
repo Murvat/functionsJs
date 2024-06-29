@@ -70,7 +70,6 @@ const res6 = ar1.filter(function (item, index) {
 });
 console.log(res6);
 
-// пишем на стрелочной функции
 const res7 = ar1.filter((item, index) => (index % 2 === 0));
 console.log(res7);
 
@@ -90,4 +89,4 @@ const f1 = (...arg) => {
     console.log('work');
 }
 
-f1(99,100);
+f1(99, 100);
