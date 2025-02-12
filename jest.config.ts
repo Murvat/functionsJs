@@ -1,6 +1,6 @@
 module.exports = {
   preset: 'ts-jest',
-  testEnvironment: 'node',
+  testEnvironment:'jsdom',
   // Adjust roots if you want your tests in a specific folder, e.g., "tests"
   roots: ['<rootDir>']
 };

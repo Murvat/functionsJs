@@ -4,18 +4,18 @@
 // hello();
 
 
-function testFunction() {
+function testFunction():void {
     const x = 5;
     const y = 10;
     console.log(x + y);
 }
 
-function hello() {
+function hello():void {
     console.log('Hello');
     testFunction();
 }
 
-function testFunction2() {
+function testFunction2():void {
     function t3() {
         console.log('t3 function');
     }
@@ -28,7 +28,7 @@ hello();
 testFunction2();
 // t3(); !Error
 
-function unixTime() {
+function unixTime():void {
     let time = Math.floor(new Date().getTime());
     console.log(time);
 }
@@ -36,7 +36,7 @@ function unixTime() {
 unixTime();
 unixTime();
 
-function randomInt1() {
+function randomInt1():void {
     const min = 100;
     const max = 200;
     let rand = Math.floor(min + Math.random() * (max + 1 - min));
@@ -45,7 +45,7 @@ function randomInt1() {
 
 randomInt();
 
-function randomInt() {
+function randomInt():void {
     console.log('random int 555');
 }
 

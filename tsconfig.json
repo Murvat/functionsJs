@@ -6,7 +6,8 @@
     "rootDir": "./",
     "outDir": "./dist",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["dom", "es6"] // <-- Add "dom" here
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules"]
